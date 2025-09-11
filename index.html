@@ -1,66 +1,178 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carolina | Portfólio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículo | Carolina Matos da Costa</title>
+  <style>
+    /* ===== RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #f5f5f5;
+      background: url("https://www.toptal.com/designers/subtlepatterns/uploads/double-bubble.png");
+      background-color: #1a082d; /* Roxo escuro */
+      background-attachment: fixed;
+      line-height: 1.6;
+    }
+
+    header {
+      background: rgba(40, 0, 70, 0.85);
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #b366ff;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #b366ff;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      border-left: 5px solid #b366ff;
+      padding-left: 10px;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      margin-top: 20px;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #b366ff, #5f2ab3);
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #b366ff;
+    }
+
+    /* ===== Certificados ===== */
+    .certificados {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(179, 102, 255, 0.4);
+    }
+
+    .card h3 {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .card span {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* ===== Contato ===== */
+    .contact {
+      text-align: center;
+    }
+
+    .contact a {
+      color: #b366ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(40, 0, 70, 0.85);
+      color: #bbb;
+      font-size: 0.9rem;
+      margin-top: 50px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">Carolina</div>
-            <ul class="nav-links">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#projects">Projetos</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Olá, sou Carolina!</h1>
-            <p>Desenvolvedora e Designer apaixonada por criar experiências digitais incríveis.</p>
-            <a href="#projects" class="btn">Meus Projetos</a>
-        </div>
-    </section>
+  <header>
+    <h1>Carolina Matos da Costa</h1>
+    <p>Programadora Iniciante | Estudante de Desenvolvimento Web</p>
+  </header>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2>Sobre Mim</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Sou uma profissional dedicada à criação de soluções digitais inovadoras e criativas. Com expertise em desenvolvimento web e design, busco sempre entregar projetos que combinem funcionalidade e estética.</p>
-                    <p>Minha paixão por tecnologia me impulsiona a explorar novas ferramentas e técnicas, garantindo que meus projetos estejam sempre atualizados e relevantes.</p>
-                </div>
-                <div class="about-image">
-                    <img src="sua-imagem.jpg" alt="Cappuh">
-                </div>
-            </div>
-        </div>
-    </section>
+  <section id="sobre">
+    <h2>Sobre Mim</h2>
+    <p>Sou estudante com interesse em programação e tecnologia da informação. Já participei de imersões e cursos na área de desenvolvimento web, front-end, back-end e inteligência artificial pela Alura. Estou sempre buscando aprender e aplicar novos conhecimentos em projetos.</p>
+  </section>
 
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Meus Projetos</h2>
-            <div class="project-grid">
-                <div class="project-item">Projeto 1</div>
-                <div class="project-item">Projeto 2</div>
-                <div class="project-item">Projeto 3</div>
-            </div>
-        </div>
-    </section>
+  <section id="certificados">
+    <h2>Certificados</h2>
+    <div class="certificados">
+      <div class="card">
+        <h3>HTML e CSS</h3>
+        <span>Ambientes de Desenvolvimento, Estrutura de Arquivos e Tags - Alura (2025)</span>
+      </div>
+      <div class="card">
+        <h3>Lógica de Programação</h3>
+        <span>Mergulhe em Programação com JavaScript - Alura (2024)</span>
+      </div>
+      <div class="card">
+        <h3>Imersão Front-End 2ª Edição</h3>
+        <span>Alura (2025)</span>
+      </div>
+      <div class="card">
+        <h3>Imersão Dev Back-End</h3>
+        <span>Alura + Google Gemini (2024)</span>
+      </div>
+      <div class="card">
+        <h3>Imersão IA 3ª Edição</h3>
+        <span>Alura + Google Gemini (2025)</span>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contato</h2>
-            <p>Entre em contato para discutir seu próximo projeto!</p>
-            <a href="mailto:seuemail@exemplo.com" class="btn">Enviar Email</a>
-        </div>
-    </section>
+  <section id="contato" class="contact">
+    <h2>Contato</h2>
+    <p>📧 <a href="mailto:cfxdscg@gmail.com">cfxdscg@gmail.com</a></p>
+    <p>💻 GitHub: <a href="https://github.com/carolinamatosdacosta" target="_blank">github.com/carolinamatosdacosta</a></p>
+  </section>
 
-    <script src="script.js"></script>
+  <footer>
+    <p>© 2025 - Desenvolvido por Carolina Matos da Costa</p>
+  </footer>
+
 </body>
 </html>
