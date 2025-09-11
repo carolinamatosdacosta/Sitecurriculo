@@ -1,69 +1,139 @@
-/* Fonte moderna */
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    color: #f5f5f5;
-    background: url('https://www.toptal.com/designers/subtlepatterns/uploads/double-bubble.png');
-    background-color: #0d1117; /* cor de fundo escura */
-    background-attachment: fixed;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1a082d, #2c0f47);
+  background-attachment: fixed;
+  color: #f5f5f5;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background: rgba(0, 0, 0, 0.6);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+header {
+  background: rgba(40, 0, 70, 0.9);
+  padding: 25px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(179, 102, 255, 0.4);
 }
 
-.navbar .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #00e0ff;
+header h1 {
+  font-size: 2.5rem;
+  color: #b366ff;
+  text-shadow: 0 0 15px #b366ff;
 }
 
-.nav-links li {
-    display: inline-block;
-    margin: 0 15px;
+header p {
+  font-size: 1.2rem;
+  color: #ddd;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: #f5f5f5;
-    transition: 0.3s;
+section {
+  padding: 70px 20px;
+  max-width: 1100px;
+  margin: auto;
+  animation: fadeIn 1.5s ease;
 }
 
-.nav-links a:hover {
-    color: #00e0ff;
+h2 {
+  color: #b366ff;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  border-left: 5px solid #b366ff;
+  padding-left: 10px;
+  text-shadow: 0 0 10px #b366ff;
 }
 
-/* Hero */
-.hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: linear-gradient(135deg, #1f1c2c, #928dab);
+/* ===== Cards de Certificados ===== */
+.certificados {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    color: #00e0ff;
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  transition: 0.3s;
+  border: 1px solid rgba(179, 102, 255, 0.3);
 }
 
-.hero p {
-    font-size: 1.2rem;
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 20px rgba(179, 102, 255, 0.5);
 }
 
-/* Botões */
-.btn {
-    display: inline-block;
-    padding: 12px 25px;
-    margin-top: 20px;
-    border-radius: 30px;
-    background: linear-gradien
+.card h3 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.card span {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* ===== Habilidades ===== */
+.skills {
+  margin-top: 20px;
+}
+
+.skill {
+  margin-bottom: 20px;
+}
+
+.skill-name {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.skill-bar {
+  height: 12px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #b366ff, #5f2ab3);
+  border-radius: 10px;
+  transition: width 2s ease;
+}
+
+/* ===== Contato ===== */
+.contact {
+  text-align: center;
+}
+
+.contact a {
+  color: #b366ff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.contact a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #b366ff;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: rgba(40, 0, 70, 0.85);
+  color: #bbb;
+  font-size: 0.9rem;
+  margin-top: 50px;
+  box-shadow:
