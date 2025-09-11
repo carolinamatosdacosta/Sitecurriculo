@@ -4,155 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Currículo | Carolina Matos da Costa</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #1a082d, #2c0f47);
-      background-attachment: fixed;
-      color: #f5f5f5;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    header {
-      background: rgba(40, 0, 70, 0.9);
-      padding: 25px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(179, 102, 255, 0.4);
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      color: #b366ff;
-      text-shadow: 0 0 15px #b366ff;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #ddd;
-    }
-
-    section {
-      padding: 70px 20px;
-      max-width: 1100px;
-      margin: auto;
-      animation: fadeIn 1.5s ease;
-    }
-
-    h2 {
-      color: #b366ff;
-      font-size: 1.8rem;
-      margin-bottom: 30px;
-      border-left: 5px solid #b366ff;
-      padding-left: 10px;
-      text-shadow: 0 0 10px #b366ff;
-    }
-
-    .certificados {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      padding: 25px;
-      text-align: center;
-      transition: 0.3s;
-      border: 1px solid rgba(179, 102, 255, 0.3);
-    }
-
-    .card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 0 20px rgba(179, 102, 255, 0.5);
-    }
-
-    .card h3 {
-      color: #fff;
-      margin-bottom: 10px;
-    }
-
-    .card span {
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-
-    .skills {
-      margin-top: 20px;
-    }
-
-    .skill {
-      margin-bottom: 20px;
-    }
-
-    .skill-name {
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-
-    .skill-bar {
-      height: 12px;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .skill-fill {
-      height: 100%;
-      width: 0;
-      background: linear-gradient(90deg, #b366ff, #5f2ab3);
-      border-radius: 10px;
-      transition: width 2s ease;
-    }
-
-    .contact {
-      text-align: center;
-    }
-
-    .contact a {
-      color: #b366ff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .contact a:hover {
-      color: #fff;
-      text-shadow: 0 0 10px #b366ff;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: rgba(40, 0, 70, 0.85);
-      color: #bbb;
-      font-size: 0.9rem;
-      margin-top: 50px;
-      box-shadow: 0 -2px 10px rgba(179, 102, 255, 0.3);
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <header>
     <h1>Carolina Matos da Costa</h1>
-    <p>Programadora Iniciante | Estudante de Desenvolvimento Web</p>
+    <p id="typing"></p> <!-- texto com animação -->
   </header>
 
   <section id="sobre">
@@ -186,28 +43,6 @@
     </div>
   </section>
 
-  <section id="habilidades">
-    <h2>Habilidades Técnicas</h2>
-    <div class="skills">
-      <div class="skill">
-        <div class="skill-name">HTML & CSS</div>
-        <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-name">JavaScript</div>
-        <div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-name">Python</div>
-        <div class="skill-bar"><div class="skill-fill" data-width="70%"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-name">C#</div>
-        <div class="skill-bar"><div class="skill-fill" data-width="60%"></div></div>
-      </div>
-    </div>
-  </section>
-
   <section id="contato" class="contact">
     <h2>Contato</h2>
     <p>📧 <a href="mailto:cfxdscg@gmail.com">cfxdscg@gmail.com</a></p>
@@ -218,15 +53,6 @@
     <p>© 2025 - Desenvolvido por Carolina Matos da Costa</p>
   </footer>
 
-  <script>
-    window.addEventListener("scroll", () => {
-      document.querySelectorAll(".skill-fill").forEach(bar => {
-        const rect = bar.getBoundingClientRect();
-        if (rect.top < window.innerHeight && bar.style.width === "0px") {
-          bar.style.width = bar.getAttribute("data-width");
-        }
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
