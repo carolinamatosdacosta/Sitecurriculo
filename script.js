@@ -1,12 +1,9 @@
-const texto = "Bem-vindo(a) ao meu portfólio";
-let i = 0;
-
-function digitar() {
-    if (i < texto.length) {
-        document.querySelector(".typing").innerHTML += texto.charAt(i);
-        i++;
-        setTimeout(digitar, 100);
+// Animação das barras de habilidade
+window.addEventListener("scroll", () => {
+  document.querySelectorAll(".skill-fill").forEach(bar => {
+    const rect = bar.getBoundingClientRect();
+    if (rect.top < window.innerHeight && bar.style.width === "0px") {
+      bar.style.width = bar.getAttribute("data-width");
     }
-}
-
-window.onload = digitar;
+  });
+});
