@@ -108,3 +108,11 @@ footer {
   font-size: 0.9rem;
   margin-top: 50px;
 }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #f5f5f5;
+  background: radial-gradient(circle at top left, #3d0066, #1a082d, #000);
+  background-attachment: fixed;
+  line-height: 1.6;
+}
