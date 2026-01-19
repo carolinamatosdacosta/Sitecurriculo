@@ -4,63 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfólio | Carolina Matos da Costa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- HEADER -->
+
   <header>
-    <h1 id="typed"></h1>
-    <p>Desenvolvedora Web & Criativa</p>
     <nav>
-      <a href="#projetos">Projetos</a>
-      <a href="#certificados">Certificados</a>
-      <a href="#contato">Contato</a>
+      <div class="logo">CMC</div>
+      <div class="links">
+        <a href="#projetos">Projetos</a>
+        <a href="#certificados">Certificados</a>
+        <a href="#contato">Contato</a>
+      </div>
     </nav>
+    <div class="hero">
+      <h1 id="typing"></h1>
+      <p>Desenvolvedora Web & Criativa</p>
+      <div class="scroll-indicator"></div>
+    </div>
   </header>
 
-  <!-- SEÇÃO PROJETOS -->
   <section id="projetos">
-    <h2>Meus Projetos</h2>
+    <h2><i class="fas fa-code"></i> Meus Projetos</h2>
     <div class="projetos-container">
       <div class="projeto-card">
         <h3>Portfólio Pessoal</h3>
         <p>Site pessoal com HTML, CSS e JS, animações e design moderno.</p>
-        <a href="#" target="_blank">Ver projeto</a>
+        <a href="#" target="_blank" class="btn">Ver projeto</a>
       </div>
       <div class="projeto-card">
         <h3>API de Filmes</h3>
         <p>API em Python e Flask, retornando informações de filmes.</p>
-        <a href="#" target="_blank">Ver código</a>
+        <a href="#" target="_blank" class="btn">Ver código</a>
       </div>
       <div class="projeto-card">
         <h3>To-Do List</h3>
         <p>Aplicação de tarefas com JS, CRUD completo e interatividade.</p>
-        <a href="#" target="_blank">Ver projeto</a>
+        <a href="#" target="_blank" class="btn">Ver projeto</a>
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO CERTIFICADOS -->
   <section id="certificados">
-    <h2>Certificados</h2>
-    <div class="certificados">
-      <div class="card"><h3>HTML e CSS</h3><span>Alura (2025)</span></div>
-      <div class="card"><h3>Lógica de Programação</h3><span>Alura (2024)</span></div>
-      <div class="card"><h3>Imersão Front-End</h3><span>Alura (2025)</span></div>
-      <div class="card"><h3>Imersão Back-End</h3><span>Alura + Google Gemini (2024)</span></div>
-      <div class="card"><h3>Imersão IA</h3><span>Alura + Google Gemini (2025)</span></div>
+    <h2><i class="fas fa-certificate"></i> Certificados</h2>
+    <div class="certificados-grid">
+      <div class="card"><h3>HTML e CSS</h3><span>Alura</span></div>
+      <div class="card"><h3>Lógica</h3><span>Alura</span></div>
+      <div class="card"><h3>Front-End</h3><span>Alura</span></div>
+      <div class="card"><h3>Back-End</h3><span>Alura + Google</span></div>
+      <div class="card"><h3>IA</h3><span>Alura + Google</span></div>
     </div>
   </section>
 
-  <!-- SEÇÃO CONTATO -->
   <section id="contato">
-    <h2>Contato</h2>
-    <p>📧 <a href="mailto:c.dfoxgg@gmail.com">cfxdscg@gmail.com</a></p>
-    <p>💻 GitHub: <a href="https://github.com/carolinamatosdacosta" target="_blank">github.com/carolinamatosdacosta</a></p>
+    <h2><i class="fas fa-paper-plane"></i> Vamos conversar?</h2>
+    <div class="contato-links">
+      <a href="mailto:c.dfoxgg@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+      <a href="https://github.com/carolinamatosdacosta" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    </div>
   </section>
 
   <footer>
-    <p>© 2025 Carolina Matos da Costa</p>
+    <p>© 2025 Carolina Matos da Costa • Feito com 💜</p>
   </footer>
 
   <script src="script.js"></script>
