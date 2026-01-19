@@ -86,17 +86,14 @@ nav {
   line-height: 1.6;
 }
 
-/* Animações */
 @keyframes flicker {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.8; }
 }
 
-/* Seções */
 section { padding: 100px 10%; }
 h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; color: var(--primary); }
 
-/* Cards de Projetos */
 .projetos-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -137,7 +134,7 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; color: var(--pr
   box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
 }
 
-/* Certificados */
+/* preciso de mais  */
 .certificados-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -176,6 +173,47 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; color: var(--pr
   background: var(--primary);
   color: #000;
   box-shadow: 0 0 20px var(--primary);
+}
+
+.btn-neon.whatsapp {
+  border-color: #25d366;
+  color: #25d366;
+}
+.btn-neon.whatsapp:hover {
+  background: #25d366;
+  color: #000;
+  box-shadow: 0 0 20px #25d366;
+}
+
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.whatsapp-float:hover { transform: scale(1.1); }
+
+.hero-bio {
+  max-width: 800px;
+  margin-top: 25px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+  border: 1px solid rgba(162, 155, 254, 0.2);
+  backdrop-filter: blur(5px);
 }
 
 footer { text-align: center; padding: 50px; opacity: 0.6; }
