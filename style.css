@@ -1,7 +1,7 @@
 :root {
   --primary-purple: #6c5ce7;
   --dark-purple: #2d3436;
-  --bg-color: #0f0c29; /* Degradê espacial */
+  --bg-color: #0f0c29; 
   --glass-bg: rgba(255, 255, 255, 0.05);
   --text-white: #f5f5f5;
 }
@@ -63,7 +63,6 @@ nav {
   margin-bottom: 10px;
 }
 
-/* Seções */
 section { padding: 100px 10%; }
 h2 {
   text-align: center;
@@ -105,7 +104,6 @@ h2 {
   font-size: 0.9rem;
 }
 
-/* Certificados */
 .certificados-grid {
   display: flex;
   flex-wrap: wrap;
@@ -133,4 +131,35 @@ footer {
   text-align: center;
   padding: 40px;
   background: rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.8rem;           
+  font-weight: 300;            
+  letter-spacing: 2px;         
+  text-transform: uppercase;   
+  
+  /* Efeito de Cor Gradiente */
+  background: linear-gradient(90deg, #ffffff, #a29bfe, #ffffff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  animation: shine 4s linear infinite;
+  
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
 }
