@@ -1,75 +1,136 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio | Carolina Matos da Costa</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+:root {
+  --primary-purple: #6c5ce7;
+  --dark-purple: #2d3436;
+  --bg-color: #0f0c29; /* Degradê espacial */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --text-white: #f5f5f5;
+}
 
-  <header>
-    <nav>
-      <div class="logo">CMC</div>
-      <div class="links">
-        <a href="#projetos">Projetos</a>
-        <a href="#certificados">Certificados</a>
-        <a href="#contato">Contato</a>
-      </div>
-    </nav>
-    <div class="hero">
-      <h1 id="typing"></h1>
-      <p>Desenvolvedora Web & Criativa</p>
-      <div class="scroll-indicator"></div>
-    </div>
-  </header>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
 
-  <section id="projetos">
-    <h2><i class="fas fa-code"></i> Meus Projetos</h2>
-    <div class="projetos-container">
-      <div class="projeto-card">
-        <h3>Portfólio Pessoal</h3>
-        <p>Site pessoal com HTML, CSS e JS, animações e design moderno.</p>
-        <a href="#" target="_blank" class="btn">Ver projeto</a>
-      </div>
-      <div class="projeto-card">
-        <h3>API de Filmes</h3>
-        <p>API em Python e Flask, retornando informações de filmes.</p>
-        <a href="#" target="_blank" class="btn">Ver código</a>
-      </div>
-      <div class="projeto-card">
-        <h3>To-Do List</h3>
-        <p>Aplicação de tarefas com JS, CRUD completo e interatividade.</p>
-        <a href="#" target="_blank" class="btn">Ver projeto</a>
-      </div>
-    </div>
-  </section>
+body {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: var(---text-white);
+  line-height: 1.6;
+}
 
-  <section id="certificados">
-    <h2><i class="fas fa-certificate"></i> Certificados</h2>
-    <div class="certificados-grid">
-      <div class="card"><h3>HTML e CSS</h3><span>Alura</span></div>
-      <div class="card"><h3>Lógica</h3><span>Alura</span></div>
-      <div class="card"><h3>Front-End</h3><span>Alura</span></div>
-      <div class="card"><h3>Back-End</h3><span>Alura + Google</span></div>
-      <div class="card"><h3>IA</h3><span>Alura + Google</span></div>
-    </div>
-  </section>
+/* Header & Nav */
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-  <section id="contato">
-    <h2><i class="fas fa-paper-plane"></i> Vamos conversar?</h2>
-    <div class="contato-links">
-      <a href="mailto:c.dfoxgg@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-      <a href="https://github.com/carolinamatosdacosta" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-    </div>
-  </section>
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 10%;
+  align-items: center;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
 
-  <footer>
-    <p>© 2025 Carolina Matos da Costa • Feito com 💜</p>
-  </footer>
+.logo { font-weight: 600; font-size: 1.5rem; color: var(--primary-purple); }
+.links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+.links a:hover { color: var(--primary-purple); }
 
-  <script src="script.js"></script>
-</body>
-</html>
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#typing {
+  font-size: 2.5rem;
+  color: var(--primary-purple);
+  margin-bottom: 10px;
+}
+
+/* Seções */
+section { padding: 100px 10%; }
+h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  color: #a29bfe;
+}
+
+/* Cards de Projetos */
+.projetos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.projeto-card {
+  background: var(--glass-bg);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.4s ease;
+  backdrop-filter: blur(5px);
+}
+
+.projeto-card:hover {
+  transform: translateY(-15px);
+  border-color: var(--primary-purple);
+  background: rgba(108, 92, 231, 0.1);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 20px;
+  background: var(--primary-purple);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 0.9rem;
+}
+
+/* Certificados */
+.certificados-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.card {
+  background: rgba(255,255,255,0.03);
+  padding: 15px 25px;
+  border-left: 4px solid var(--primary-purple);
+  border-radius: 8px;
+}
+
+/* Contato */
+#contato { text-align: center; }
+.contato-links a {
+  font-size: 1.5rem;
+  color: white;
+  margin: 0 20px;
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  background: rgba(0,0,0,0.3);
+}
