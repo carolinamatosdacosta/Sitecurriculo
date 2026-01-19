@@ -1,45 +1,75 @@
-/* Seção de Projetos */
-#projetos {
-  padding: 80px 20px;
-  text-align: center;
-}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio | Carolina Matos da Costa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-.projetos-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 40px;
-}
+  <header>
+    <nav>
+      <div class="logo">CMC</div>
+      <div class="links">
+        <a href="#projetos">Projetos</a>
+        <a href="#certificados">Certificados</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </nav>
+    <div class="hero">
+      <h1 id="typing"></h1>
+      <p>Desenvolvedora Web & Criativa</p>
+      <div class="scroll-indicator"></div>
+    </div>
+  </header>
 
-.projeto-card {
-  background: rgba(255,255,255,0.1);
-  padding: 20px;
-  border-radius: 15px;
-  width: 250px;
-  transition: 0.3s;
-}
+  <section id="projetos">
+    <h2><i class="fas fa-code"></i> Meus Projetos</h2>
+    <div class="projetos-container">
+      <div class="projeto-card">
+        <h3>Portfólio Pessoal</h3>
+        <p>Site pessoal com HTML, CSS e JS, animações e design moderno.</p>
+        <a href="#" target="_blank" class="btn">Ver projeto</a>
+      </div>
+      <div class="projeto-card">
+        <h3>API de Filmes</h3>
+        <p>API em Python e Flask, retornando informações de filmes.</p>
+        <a href="#" target="_blank" class="btn">Ver código</a>
+      </div>
+      <div class="projeto-card">
+        <h3>To-Do List</h3>
+        <p>Aplicação de tarefas com JS, CRUD completo e interatividade.</p>
+        <a href="#" target="_blank" class="btn">Ver projeto</a>
+      </div>
+    </div>
+  </section>
 
-.projeto-card:hover {
-  background: rgba(255,255,255,0.2);
-  transform: translateY(-10px);
-}
+  <section id="certificados">
+    <h2><i class="fas fa-certificate"></i> Certificados</h2>
+    <div class="certificados-grid">
+      <div class="card"><h3>HTML e CSS</h3><span>Alura</span></div>
+      <div class="card"><h3>Lógica</h3><span>Alura</span></div>
+      <div class="card"><h3>Front-End</h3><span>Alura</span></div>
+      <div class="card"><h3>Back-End</h3><span>Alura + Google</span></div>
+      <div class="card"><h3>IA</h3><span>Alura + Google</span></div>
+    </div>
+  </section>
 
-.projeto-card h3 {
-  margin-bottom: 10px;
-}
+  <section id="contato">
+    <h2><i class="fas fa-paper-plane"></i> Vamos conversar?</h2>
+    <div class="contato-links">
+      <a href="mailto:c.dfoxgg@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+      <a href="https://github.com/carolinamatosdacosta" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+  </section>
 
-.projeto-card p {
-  font-size: 0.9rem;
-  margin-bottom: 15px;
-}
+  <footer>
+    <p>© 2025 Carolina Matos da Costa • Feito com 💜</p>
+  </footer>
 
-.projeto-card a {
-  text-decoration: none;
-  color: #ffb3ff;
-  font-weight: bold;
-}
-
-.projeto-card a:hover {
-  color: #fff;
-}
+  <script src="script.js"></script>
+</body>
+</html>
