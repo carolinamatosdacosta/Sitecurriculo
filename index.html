@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfólio | Carolina Matos da Costa</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,62 +12,90 @@
 
   <header>
     <nav>
-      <div class="logo">CMC</div>
+      <div class="logo"><span>C</span>MC</div>
       <div class="links">
+        <a href="#sobre">Sobre</a>
         <a href="#projetos">Projetos</a>
         <a href="#certificados">Certificados</a>
         <a href="#contato">Contato</a>
       </div>
     </nav>
+
     <div class="hero">
       <h1 id="typing"></h1>
-      <p>Desenvolvedora Web & Criativa</p>
-      <div class="scroll-indicator"></div>
+      <p class="hero-subtitle">Desenvolvedora Web & <span class="neon-text">Criativa</span></p>
+      
+      <div class="hero-bio">
+        <p>
+          <i class="fas fa-rocket" style="color: #a29bfe;"></i> 
+          Transformando linhas de código em experiências digitais épicas. 
+          Especialista em criar interfaces modernas com foco em <strong>design neon</strong> e <strong>performance</strong>.
+        </p>
+      </div>
+
+      <div class="scroll-indicator">
+        <span>Role para explorar</span>
+        <div class="mouse"></div>
+      </div>
     </div>
   </header>
 
+  <section id="sobre">
+    <div class="about-container">
+      <div class="about-card">
+        <h2><i class="fas fa-user-astronaut"></i> Sobre Mim</h2>
+        <p>Apaixonada por tecnologia desde o primeiro "Hello World". Atualmente, mergulho no ecossistema Front-End, criando projetos que unem a lógica do código com a estética do design moderno. Minha missão é construir a web do futuro, um pixel por vez.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="projetos">
-    <h2><i class="fas fa-code"></i> Meus Projetos</h2>
+    <h2><i class="fas fa-code"></i> Projetos em Destaque</h2>
     <div class="projetos-container">
       <div class="projeto-card">
+        <div class="glow-bar"></div>
         <h3>Portfólio Pessoal</h3>
-        <p>Site pessoal com HTML, CSS e JS, animações e design moderno.</p>
+        <p>Interface Glassmorphism com animações avançadas em JS.</p>
         <a href="#" target="_blank" class="btn">Ver projeto</a>
       </div>
       <div class="projeto-card">
+        <div class="glow-bar"></div>
         <h3>API de Filmes</h3>
-        <p>API em Python e Flask, retornando informações de filmes.</p>
+        <p>Integração com Flask e processamento de dados dinâmicos.</p>
         <a href="#" target="_blank" class="btn">Ver código</a>
       </div>
       <div class="projeto-card">
+        <div class="glow-bar"></div>
         <h3>To-Do List</h3>
-        <p>Aplicação de tarefas com JS, CRUD completo e interatividade.</p>
+        <p>Aplicação full interativa com persistência de dados.</p>
         <a href="#" target="_blank" class="btn">Ver projeto</a>
       </div>
     </div>
   </section>
 
   <section id="certificados">
-    <h2><i class="fas fa-certificate"></i> Certificados</h2>
+    <h2><i class="fas fa-certificate"></i> Conquistas & Certificados</h2>
     <div class="certificados-grid">
-      <div class="card"><h3>HTML e CSS</h3><span>Alura</span></div>
-      <div class="card"><h3>Lógica</h3><span>Alura</span></div>
-      <div class="card"><h3>Front-End</h3><span>Alura</span></div>
-      <div class="card"><h3>Back-End</h3><span>Alura + Google</span></div>
-      <div class="card"><h3>IA</h3><span>Alura + Google</span></div>
+      <div class="card"><strong>HTML e CSS</strong><span>Alura</span></div>
+      <div class="card"><strong>Lógica</strong><span>Alura</span></div>
+      <div class="card"><strong>Front-End</strong><span>Alura</span></div>
+      <div class="card"><strong>Back-End</strong><span>Alura + Google</span></div>
+      <div class="card"><strong>IA</strong><span>Alura + Google</span></div>
     </div>
   </section>
 
   <section id="contato">
-    <h2><i class="fas fa-paper-plane"></i> Vamos conversar?</h2>
-    <div class="contato-links">
-      <a href="mailto:c.dfoxgg@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-      <a href="https://github.com/carolinamatosdacosta" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    <div class="contato-box">
+      <h2><i class="fas fa-envelope-open-text"></i> Vamos criar algo juntos?</h2>
+      <div class="contato-links">
+        <a href="mailto:c.dfoxgg@gmail.com" class="btn-neon"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://github.com/carolinamatosdacosta" target="_blank" class="btn-neon"><i class="fab fa-github"></i> GitHub</a>
+      </div>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Carolina Matos da Costa • Feito com 💜</p>
+    <p>© 2025 Carolina Matos da Costa • Made with 💜 & Code</p>
   </footer>
 
   <script src="script.js"></script>
