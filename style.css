@@ -241,35 +241,47 @@ iframe {
     margin: 15px 0;
 }
 
-/* --- WIDGET FLUTUANTE (ESTILO WHATSAPP) --- */
-.spotify-float {
+#spotify-widget {
     position: fixed;
-    bottom: 100px; /* Acima do ícone do WhatsApp */
+    bottom: 90px;
     right: 20px;
     width: 300px;
-    z-index: 999;
-    background: rgba(15, 15, 15, 0.9);
+    background: rgba(18, 18, 18, 0.95);
     backdrop-filter: blur(10px);
-    border: 1px solid #1DB954; /* Verde Spotify */
-    border-radius: 12px;
+    border: 1px solid #1DB954;
+    border-radius: 15px;
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+}
+
+/* Quando estiver fechado */
+.spotify-minimized {
+    height: 45px; /* Só aparece o botão */
+}
+
+/* Quando estiver aberto */
+.spotify-opened {
+    height: 420px; /* Mostra o player inteiro */
+}
+
+#toggle-spotify {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #1DB954;
     padding: 10px;
-    box-shadow: 0 0 20px rgba(29, 185, 84, 0.3);
-    transition: 0.3s;
-}
-
-/* --- GRID DE STATUS (DISCORD) --- */
-.status-container {
+    cursor: pointer;
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    padding: 20px;
+    gap: 10px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* --- LIMPEZA DOS CARDS --- */
-.projeto-card {
-    min-width: 300px;
-    flex: 1;
+#spotify-content {
+    padding: 10px;
 }
 
 .tiktok-float {

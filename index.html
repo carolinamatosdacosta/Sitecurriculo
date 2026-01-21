@@ -85,11 +85,17 @@
     <script async src="https://www.tiktok.com/embed.js"></script>
 </div>
 
-<div class="spotify-float">
-    <p style="font-size: 12px; color: #1DB954; margin-bottom: 5px;"><i class="fab fa-spotify"></i> Minha Playlist</p>
-    <iframe style="border-radius:8px" 
-        src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator&theme=0" 
-        width="100%" height="80" frameBorder="0" allow="encrypted-media"></iframe>
+<div id="spotify-widget" class="spotify-minimized">
+    <button id="toggle-spotify" onclick="toggleSpotify()">
+        <i class="fab fa-spotify"></i> <span>Minha Vibe</span>
+    </button>
+    
+    <div id="spotify-content">
+        <iframe style="border-radius:12px" 
+            src="https://open.spotify.com/embed/track/4P996YIbu3AnvYVvofonvB5" 
+            width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+        </iframe>
+    </div>
 </div>
 
 <a href="https://www.tiktok.com/@cappuuh" class="tiktok-float" target="_blank">
