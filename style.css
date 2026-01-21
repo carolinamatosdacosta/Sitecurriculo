@@ -93,10 +93,34 @@ nav {
 section { padding: 100px 10%; }
 h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; color: var(--primary); }
 
+/* Deixa todos os cards do grid com a mesma altura */
 .projetos-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    align-items: start; /* Impede que um card estique o outro */
+}
+
+.projeto-card.tiktok-card {
+    max-height: 450px; /* Limita a altura do card */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Corta o excesso do widget se necessário */
+}
+
+.tiktok-card blockquote {
+    transform: scale(0.8); /* Diminui o tamanho em 20% */
+    transform-origin: top center;
+    margin: -20px 0 !important; /* Remove espaços inúteis */
+    background: transparent !important;
+}
+
+/* Deixa os botões menores também se quiser */
+.projeto-card .btn {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+}
 }
 
 .projeto-card {
