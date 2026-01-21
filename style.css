@@ -226,3 +226,17 @@ footer { text-align: center; padding: 50px; opacity: 0.6; }
   display: flex;
   justify-content: space-between;
 }
+
+iframe {
+    box-shadow: 0 0 15px rgba(162, 155, 254, 0.2);
+    border: none;
+    margin-top: 15px;
+}
+
+#lanyard-status p {
+    background: rgba(162, 155, 254, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 4px solid #a29bfe;
+    margin: 15px 0;
+}

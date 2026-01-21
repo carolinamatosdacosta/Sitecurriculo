@@ -33,32 +33,49 @@ function typeEffect() {
 
 typeEffect();
 
-async function carregarRepositorio() {
-    try {
-        const response = await fetch('http://localhost:3000/musicas');
-        const musicas = await response.json();
-        
-        const container = document.getElementById('grid-musicas');
-        container.innerHTML = ''; // Limpa a lista antes de carregar
+const minhasMusicas = [
+    { titulo: "Dancing In The Flames", artista: "The Weeknd", id: "6699VpY7pUTh9U0O4v6KPT" },
+    { titulo: "Don't Shut Me Down", artista: "ABBA", id: "0p69fBY9H7Y4SZY0pAbR9r" },
+    { titulo: "Glad You Came", artista: "The Wanted", id: "1vYvYx7933X0W283C49V0r" }
+];
 
-        musicas.forEach(m => {
-            container.innerHTML += `
-                <div class="projeto-card">
-                    <div class="glow-bar"></div>
-                    <h3>${m.titulo}</h3>
-                    <p><i class="fas fa-user"></i> ${m.artista}</p>
-                    
-                    ${m.spotify_url ? `
-                        <iframe src="${m.spotify_url}" width="100%" height="80" 
-                        frameBorder="0" allow="encrypted-media" style="border-radius:12px;"></iframe>
-                    ` : '<p style="font-size:0.8rem; opacity:0.5;">Player não disponível</p>'}
-                </div>
-            `;
-        });
-    } catch (error) {
-        console.error("Erro ao carregar o banco de dados:", error);
+function renderizarMusicas() {
+    const container = document.getElementById('grid-musicas');
+    if(!container) return;
+
+    container.innerHTML = minhasMusicas.map(m => `
+        <div class="projeto-card musica-mini">
+            <div class="glow-bar"></div>
+            <iframe style="border-radius:12px" 
+                src="https://open.spotify.com/embed/track/${m.id}?utm_source=generator&theme=0" 
+                width="100%" height="80" frameBorder="0" allow="encrypted-media">
+            </iframe>
+        </div>
+    `).join('');
+}
+
+async function carregarStatusDiscord() {
+    const userID = "715243302250119259"; // Coloque aqui o seu ID numérico do Discord
+    try {
+        const response = await fetch(`https://api.lanyard.rest/v1/users/${userID}`);
+        const data = await response.json();
+        const status = data.data;
+
+        const container = document.getElementById('lanyard-status');
+        
+        if (status.listening_to_spotify) {
+            container.innerHTML = `<p>🟢 Ouvindo agora: <strong>${status.spotify.song}</strong></p>`;
+        } else if (status.activities.length > 0) {
+            container.innerHTML = `<p>🎮 Jogando: <strong>${status.activities[0].name}</strong></p>`;
+        } else {
+            container.innerHTML = `<p>⚪ No momento: ${status.discord_status}</p>`;
+        }
+    } catch (err) {
+        console.log("Erro ao carregar status");
     }
 }
 
-window.onload = carregarRepositorio;
+// Chame a função
+carregarStatusDiscord();
 
+window.addEventListener('load', renderizarMusicas);
