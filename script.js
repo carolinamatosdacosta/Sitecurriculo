@@ -55,3 +55,22 @@ function renderizarMusicas() {
 }
 
 window.addEventListener('load', renderizarMusicas);
+
+function renderizarMusicas() {
+    const container = document.getElementById('grid-musicas');
+    if(!container) return;
+
+    const musicas = [
+        { id: "6699VpY7pUTh9U0O4v6KPT" }, // The Weeknd
+        { id: "0p69fBY9H7Y4SZY0pAbR9r" }  // ABBA
+    ];
+
+    container.innerHTML = musicas.map(m => `
+        <div class="projeto-card">
+            <iframe style="border-radius:12px" 
+                src="https://open.spotify.com/embed/track/${m.id}?utm_source=generator&theme=0" 
+                width="100%" height="80" frameBorder="0" allow="encrypted-media">
+            </iframe>
+        </div>
+    `).join('');
+}
