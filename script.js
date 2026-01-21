@@ -1,48 +1,58 @@
-// Textos para a animação
+// --- ANIMAÇÃO DE DIGITAÇÃO ---
 const typingText = [
-  "Programadora Iniciante 💻",
-  "Estudante de Desenvolvimento Web 🌐",
-  "Apaixonada por Tecnologia 🚀"
+    "Programadora Full Stack 💻",
+    "Estudante de Engenharia de Software 🌐",
+    "Apaixonada por Tecnologia 🚀"
 ];
 
-let i = 0; // índice da frase
-let j = 0; // índice da letra
+let i = 0; 
+let j = 0; 
 let currentText = "";
 let isDeleting = false;
-const typingElement = document.getElementById("typing");
 
 function typeEffect() {
-  if (i < typingText.length) {
-    if (!isDeleting && j <= typingText[i].length) {
-      currentText = typingText[i].substring(0, j++);
-      typingElement.textContent = currentText;
-      setTimeout(typeEffect, 120);
-    } else if (isDeleting && j >= 0) {
-      currentText = typingText[i].substring(0, j--);
-      typingElement.textContent = currentText;
-      setTimeout(typeEffect, 70);
-    } else {
-      isDeleting = !isDeleting;
-      if (!isDeleting) {
-        i = (i + 1) % typingText.length;
-      }
-      setTimeout(typeEffect, 800);
+    const typingElement = document.getElementById("typing");
+    if (!typingElement) return;
+
+    if (i < typingText.length) {
+        if (!isDeleting && j <= typingText[i].length) {
+            currentText = typingText[i].substring(0, j++);
+            typingElement.textContent = currentText;
+            setTimeout(typeEffect, 120);
+        } else if (isDeleting && j >= 0) {
+            currentText = typingText[i].substring(0, j--);
+            typingElement.textContent = currentText;
+            setTimeout(typeEffect, 70);
+        } else {
+            isDeleting = !isDeleting;
+            if (!isDeleting) {
+                i = (i + 1) % typingText.length;
+            }
+            setTimeout(typeEffect, 1200); // Pausa quando termina de escrever
+        }
     }
-  }
 }
 
-
+// --- CONTROLE DO SPOTIFY (BOLINHA) ---
 function toggleSpotify() {
     const widget = document.getElementById('spotify-widget');
     const icon = document.querySelector('#toggle-spotify i');
+    const span = document.querySelector('#toggle-spotify span');
     
     widget.classList.toggle('spotify-opened');
     
     if (widget.classList.contains('spotify-opened')) {
-        icon.classList.remove('fab', 'fa-spotify');
-        icon.classList.add('fas', 'fa-times'); // Vira um X
+        // Quando abre: vira um X e mostra o texto
+        icon.className = 'fas fa-times'; 
+        if(span) span.style.display = 'block';
     } else {
-        icon.classList.remove('fas', 'fa-times');
-        icon.classList.add('fab', 'fa-spotify'); // Volta a ser Spotify
+        // Quando fecha: volta o ícone do Spotify
+        icon.className = 'fab fa-spotify';
+        if(span) span.style.display = 'none';
     }
 }
+
+// Inicia as funções quando a página carrega
+document.addEventListener("DOMContentLoaded", () => {
+    typeEffect();
+});

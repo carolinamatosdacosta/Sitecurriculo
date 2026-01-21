@@ -52,76 +52,50 @@
       </div>
     </section>
 
-<section id="projetos">
-  <h2 class="section-title">Meus Projetos</h2>
-  
-  <div class="projetos-container"> <div class="projeto-card">
-      <div class="glow-bar"></div>
-      <h3>Portfólio Pessoal</h3>
-      <p>Interface Glassmorphism com animações!</p>
-      <a href="https://github.com/carolinamatosdacosta/Sitecurriculo" class="btn">Ver projeto</a>
-    </div>
+    <section id="projetos">
+      <h2 class="section-title">Meus Projetos</h2>
+      
+      <div class="projetos-container"> 
+        <div class="projeto-card">
+          <div class="glow-bar"></div>
+          <h3>Portfólio Pessoal</h3>
+          <p>Interface Glassmorphism com animações!</p>
+          <a href="https://github.com/carolinamatosdacosta/Sitecurriculo" class="btn">Ver projeto</a>
+        </div>
 
-    <div class="projeto-card">
-      <div class="glow-bar"></div>
-      <h3>API de Filmes</h3>
-      <p>Integração com Flask e Python.</p>
-      <a href="https://github.com/carolinamatosdacosta/Apifilmessporpy" class="btn">Ver código</a>
-    </div>
+        <div class="projeto-card">
+          <div class="glow-bar"></div>
+          <h3>API de Filmes</h3>
+          <p>Integração com Flask e Python.</p>
+          <a href="https://github.com/carolinamatosdacosta/Apifilmessporpy" class="btn">Ver código</a>
+        </div>
 
-  <div class="projeto-card jogo-destaque">
-    <div class="glow-bar"></div>
-    <h3><i class="fas fa-gamepad"></i> Visual Novel: Carolinaa</h3>
-    <p>Um jogo interativo de escolhas desenvolvido com lógica de estados e design personalizado.</p>
-    
-    <div class="game-frame">
-        <iframe src="https://taupe-conkies-bc457a.netlify.app/" 
-                title="Carolinaa Game"
-                loading="lazy">
-        </iframe>
-    </div>
+        <div class="projeto-card tiktok-card">
+          <div class="glow-bar"></div>
+          <h3>Me acompanhe no TikTok</h3>
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@cappuuh" data-unique-id="cappuuh" data-embed-type="video" style="max-width: 605px;min-width: 325px;">
+            <section> </section>
+          </blockquote>
+          <script async src="https://www.tiktok.com/embed.js"></script>
+        </div>
+      </div>
 
-    <div class="jogo-links">
-        <a href="https://taupe-conkies-bc457a.netlify.app/" target="_blank" class="btn">
-            <i class="fas fa-expand"></i> Jogar em Tela Cheia
-        </a>
-        <a href="https://github.com/carolinamatosdacosta" target="_blank" class="btn-neon" style="font-size: 0.8rem; padding: 8px 15px;">
-            <i class="fab fa-github"></i> Ver Código
-        </a>
-    </div>
-</div>
+      <div class="projeto-card jogo-destaque" style="margin-top: 30px;">
+          <div class="glow-bar"></div>
+          <h3><i class="fas fa-gamepad"></i> Visual Novel: Carolinaa</h3>
+          <p>Um jogo interativo de escolhas desenvolvido com lógica de estados.</p>
+          
+          <div class="game-frame">
+              <iframe src="https://taupe-conkies-bc457a.netlify.app/" title="Carolinaa Game" loading="lazy"></iframe>
+          </div>
 
-    <a href="https://taupe-conkies-bc457a.netlify.app/" target="_blank" class="btn">Jogar em tela cheia</a>
-</div>
-
-<div class="projeto-card tiktok-card">
-    <div class="glow-bar"></div>
-    <h3>Me acompanhe no TikTok</h3>
-    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@cappuuhdata-unique-id="SEU_USUARIO" data-embed-type="video" style="max-width: 605px;min-width: 325px;" >
-        <section> </section>
-    </blockquote>
-    <script async src="https://www.tiktok.com/embed.js"></script>
-</div>
-
-<div id="spotify-widget" class="spotify-minimized">
-    <button id="toggle-spotify" onclick="toggleSpotify()">
-        <i class="fab fa-spotify"></i> <span>Minha Vibe</span>
-    </button>
-    
-    <div id="spotify-content">
-        <iframe style="border-radius:12px" 
-            src="https://open.spotify.com/embed/track/4P996YIbu3AnvYVvofonvB5" 
-            width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-        </iframe>
-    </div>
-</div>
-
-<a href="https://www.tiktok.com/@cappuuh" class="tiktok-float" target="_blank">
-    <i class="fab fa-tiktok"></i>
-</a>
-
-  </div>
-</section>
+          <div class="jogo-links">
+              <a href="https://taupe-conkies-bc457a.netlify.app/" target="_blank" class="btn">
+                  <i class="fas fa-expand"></i> Jogar em Tela Cheia
+              </a>
+          </div>
+      </div>
+    </section>
 
     <section id="certificados">
       <h2><i class="fas fa-certificate"></i> Conquistas & Certificados</h2>
@@ -152,7 +126,20 @@
     <p>© 2025 Carolina Matos da Costa • Made with 💜 & Code</p>
   </footer>
 
-  <a href="https://wa.me/5511915140791" class="whatsapp-float" target="_blank" aria-label="Contato pelo WhatsApp">
+  <div id="spotify-widget">
+      <button id="toggle-spotify" onclick="toggleSpotify()">
+          <i class="fab fa-spotify"></i> <span>Minha Vibe</span>
+      </button>
+      <div id="spotify-content">
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1E37S97uDshAId?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+  </div>
+
+  <a href="https://www.tiktok.com/@cappuuh" class="tiktok-float" target="_blank">
+      <i class="fab fa-tiktok"></i>
+  </a>
+
+  <a href="https://wa.me/5511915140791" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
 
