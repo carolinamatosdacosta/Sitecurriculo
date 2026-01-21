@@ -32,3 +32,39 @@ function typeEffect() {
 }
 
 typeEffect();
+
+const API_URL = 'http://localhost:3000/musicas';
+
+async function carregarMusicas() {
+    try {
+        const res = await fetch(API_URL);
+        const musicas = await res.json();
+        const lista = document.getElementById('lista-musicas');
+        lista.innerHTML = musicas.map(m => `
+            <li>
+                <span><strong>${m.titulo}</strong> - ${m.artista}</span>
+            </li>
+        `).join('');
+    } catch (err) {
+        console.error("Erro ao carregar músicas. O servidor está ligado?");
+    }
+}
+
+async function salvarMusica() {
+    const titulo = document.getElementById('titulo').value;
+    const artista = document.getElementById('artista').value;
+
+    if (!titulo || !artista) return alert("Preencha tudo!");
+
+    await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ titulo, artista })
+    });
+
+    document.getElementById('titulo').value = '';
+    document.getElementById('artista').value = '';
+    carregarMusicas();
+}
+
+carregarMusicas();
