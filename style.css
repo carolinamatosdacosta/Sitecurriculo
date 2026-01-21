@@ -271,3 +271,27 @@ iframe {
     min-width: 300px;
     flex: 1;
 }
+
+.tiktok-float {
+    position: fixed;
+    bottom: 160px; /* Acima do Spotify e do WhatsApp */
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 25px;
+    box-shadow: 0 0 15px rgba(255, 0, 80, 0.5); /* Brilho rosa do TikTok */
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.tiktok-float:hover {
+    transform: scale(1.1);
+}
