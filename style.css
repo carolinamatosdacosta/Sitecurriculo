@@ -241,47 +241,76 @@ iframe {
     margin: 15px 0;
 }
 
+/* WIDGET SPOTIFY EM FORMATO DE BOLINHA */
 #spotify-widget {
     position: fixed;
-    bottom: 90px;
+    bottom: 90px; /* Acima do WhatsApp */
     right: 20px;
-    width: 300px;
-    background: rgba(18, 18, 18, 0.95);
-    backdrop-filter: blur(10px);
-    border: 1px solid #1DB954;
-    border-radius: 15px;
+    width: 60px;
+    height: 60px;
+    background: #1DB954;
+    border-radius: 50px;
     z-index: 1000;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
 }
 
-/* Quando estiver fechado */
-.spotify-minimized {
-    height: 45px; /* Só aparece o botão */
-}
-
-/* Quando estiver aberto */
-.spotify-opened {
-    height: 420px; /* Mostra o player inteiro */
+/* Quando clicar e abrir */
+#spotify-widget.spotify-opened {
+    width: 320px;
+    height: 450px;
+    border-radius: 20px;
+    background: rgba(18, 18, 18, 0.98);
+    backdrop-filter: blur(10px);
+    bottom: 20px; /* Desce um pouco ao abrir para ficar bonito */
 }
 
 #toggle-spotify {
-    width: 100%;
+    min-height: 60px; /* Tamanho da bolinha */
+    width: 60px;
     background: transparent;
     border: none;
-    color: #1DB954;
-    padding: 10px;
+    color: white;
     cursor: pointer;
+    font-size: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
+    transition: 0.3s;
+}
+
+/* Ajuste do ícone e texto quando aberto */
+.spotify-opened #toggle-spotify {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Esconde o texto "Minha Vibe" enquanto for bolinha */
+#toggle-spotify span {
+    display: none;
+    font-size: 0.9rem;
+}
+
+.spotify-opened #toggle-spotify span {
+    display: block;
 }
 
 #spotify-content {
     padding: 10px;
+    opacity: 0;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.spotify-opened #spotify-content {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .tiktok-float {

@@ -31,46 +31,18 @@ function typeEffect() {
   }
 }
 
-typeEffect();
 
-const minhasMusicas = [
-    { titulo: "Dancing In The Flames", artista: "The Weeknd", id: "6699VpY7pUTh9U0O4v6KPT" },
-    { titulo: "Don't Shut Me Down", artista: "ABBA", id: "0p69fBY9H7Y4SZY0pAbR9r" },
-    { titulo: "Glad You Came", artista: "The Wanted", id: "1vYvYx7933X0W283C49V0r" }
-];
-
-function renderizarMusicas() {
-    const container = document.getElementById('grid-musicas');
-    if(!container) return;
-
-    container.innerHTML = minhasMusicas.map(m => `
-        <div class="projeto-card musica-mini">
-            <div class="glow-bar"></div>
-            <iframe style="border-radius:12px" 
-                src="https://open.spotify.com/embed/track/${m.id}?utm_source=generator&theme=0" 
-                width="100%" height="80" frameBorder="0" allow="encrypted-media">
-            </iframe>
-        </div>
-    `).join('');
-}
-
-window.addEventListener('load', renderizarMusicas);
-
-function renderizarMusicas() {
-    const container = document.getElementById('grid-musicas');
-    if(!container) return;
-
-    const musicas = [
-        { id: "6699VpY7pUTh9U0O4v6KPT" }, // The Weeknd
-        { id: "0p69fBY9H7Y4SZY0pAbR9r" }  // ABBA
-    ];
-
-    container.innerHTML = musicas.map(m => `
-        <div class="projeto-card">
-            <iframe style="border-radius:12px" 
-                src="https://open.spotify.com/embed/track/${m.id}?utm_source=generator&theme=0" 
-                width="100%" height="80" frameBorder="0" allow="encrypted-media">
-            </iframe>
-        </div>
-    `).join('');
+function toggleSpotify() {
+    const widget = document.getElementById('spotify-widget');
+    const icon = document.querySelector('#toggle-spotify i');
+    
+    widget.classList.toggle('spotify-opened');
+    
+    if (widget.classList.contains('spotify-opened')) {
+        icon.classList.remove('fab', 'fa-spotify');
+        icon.classList.add('fas', 'fa-times'); // Vira um X
+    } else {
+        icon.classList.remove('fas', 'fa-times');
+        icon.classList.add('fab', 'fa-spotify'); // Volta a ser Spotify
+    }
 }
