@@ -1,144 +1,150 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio | Carolina Matos da Costa</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-
-  <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
-  <meta name="theme-color" content="#ffffff">
-</head>
-<body>
-
-  <header>
-    <nav>
-      <div class="logo"><span>C</span>MC</div>
-      <div class="links">
-        <a href="#sobre">Sobre</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#certificados">Certificados</a>
-        <a href="#contato">Contato</a>
-      </div>
-    </nav>
-
-    <div class="hero">
-      <h1 id="typing">Carolina Matos</h1>
-      <p class="hero-subtitle">Desenvolvedora de Software <span class="neon-text">Junior</span></p>
-      
-      <div class="hero-bio">
-        <p>
-          <i class="fas fa-terminal" style="color: #a29bfe;"></i> 
-          Transformando lógica complexa em experiências digitais completas. 
-          Especialista em desenvolvimento <strong>Full Stack</strong>, unindo a robustez do 
-          <strong>Back-end (JS/Python/SQL/C#)</strong> com interfaces modernas.
-        </p>
+<main>
+  <section id="sobre">
+    <div class="about-container">
+      <div class="about-card">
+        <h2><i class="fas fa-user-astronaut"></i> Sobre Mim</h2>
+        <p>Apaixonada por tecnologia desde o primeiro "Hello World". Atualmente, mergulho no ecossistema de desenvolvimento de software, criando soluções que unem a lógica do código com a estética do design moderno.</p>
       </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section id="sobre">
-      <div class="about-container">
-        <div class="about-card">
-          <h2><i class="fas fa-user-astronaut"></i> Sobre Mim</h2>
-          <p>Apaixonada por tecnologia desde o primeiro "Hello World". Atualmente, mergulho no ecossistema de desenvolvimento de software, criando soluções que unem a lógica do código com a estética do design moderno.</p>
-        </div>
+  <section id="projetos">
+    <h2 class="section-title">Meus Projetos</h2>
+    <div class="projetos-container">
+      <div class="projeto-card">
+        <div class="glow-bar"></div>
+        <h3>Portfólio Pessoal</h3>
+        <p>Interface Glassmorphism com animações!</p>
+        <a href="https://github.com/carolinamatosdacosta/Sitecurriculo" class="btn">Ver projeto</a>
       </div>
-    </section>
 
-<section id="projetos">
-  <h2 class="section-title">Meus Projetos</h2>
-  
-  <div class="projetos-container"> <div class="projeto-card">
-      <div class="glow-bar"></div>
-      <h3>Portfólio Pessoal</h3>
-      <p>Interface Glassmorphism com animações!</p>
-      <a href="https://github.com/carolinamatosdacosta/Sitecurriculo" class="btn">Ver projeto</a>
+      <div class="projeto-card">
+        <div class="glow-bar"></div>
+        <h3>API de Filmes</h3>
+        <p>Integração com Flask e Python.</p>
+        <a href="https://github.com/carolinamatosdacosta/Apifilmessporpy" class="btn">Ver código</a>
+      </div>
+
+      <div class="projeto-card">
+        <div class="glow-bar"></div>
+        <h3>Sistemas & Lógica</h3>
+        <p>Algoritmos em C# e Lua.</p>
+        <a href="#" class="btn">Ver projeto</a>
+      </div>
     </div>
+  </section>
 
-    <div class="projeto-card">
-      <div class="glow-bar"></div>
-      <h3>API de Filmes</h3>
-      <p>Integração com Flask e Python.</p>
-      <a href="https://github.com/carolinamatosdacosta/Apifilmessporpy" class="btn">Ver código</a>
-    </div>
-
-    <div class="projeto-card">
-      <div class="glow-bar"></div>
-      <h3>Sistemas & Lógica</h3>
-      <p>Algoritmos em C# e Lua.</p>
-      <a href="..." class="btn">Ver projeto</a>
-    </div>
-
-<section id="social">
+  <section id="social">
     <h2 class="section-title">Conectada 🌐</h2>
     <div class="projetos-container">
-        
+      <div class="projeto-card">
+        <div class="glow-bar"></div>
+        <h3>Minha Vibe</h3>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EIX47X906mS8u?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+
+      <div class="projeto-card" id="discord-card">
+        <div class="glow-bar"></div>
+        <h3>Status Real-time</h3>
+        <div id="lanyard-status">
+          <p>Carregando atividade...</p>
+        </div>
+        <a href="https://discord.com/users/715243302250119259" target="_blank" class="btn">Me add no Discord</a>
+      </div>
+    </div>
+
+    <div id="grid-musicas" class="projetos-container" style="margin-top: 20px;">
+    </div>
+  </section>
+
+  <section id="certificados">
+    ```
+
+---
+
+### 2. O seu JavaScript (`script.js`)
+Eu corrigi a URL do Spotify (que estava faltando o `${ }` para ler o ID da música) e limpei a função de renderização:
+
+```javascript
+// Animação de Digitação
+const typingText = [
+  "Programadora Iniciante 💻",
+  "Estudante de Desenvolvimento Web 🌐",
+  "Apaixonada por Tecnologia 🚀"
+];
+
+let i = 0; let j = 0; let isDeleting = false;
+const typingElement = document.getElementById("typing");
+
+function typeEffect() {
+  let currentPhrase = typingText[i];
+  if (isDeleting) {
+    typingElement.textContent = currentPhrase.substring(0, j--);
+  } else {
+    typingElement.textContent = currentPhrase.substring(0, j++);
+  }
+
+  if (!isDeleting && j > currentPhrase.length) {
+    isDeleting = true;
+    setTimeout(typeEffect, 1000);
+  } else if (isDeleting && j < 0) {
+    isDeleting = false;
+    i = (i + 1) % typingText.length;
+    setTimeout(typeEffect, 500);
+  } else {
+    setTimeout(typeEffect, isDeleting ? 50 : 100);
+  }
+}
+
+// Repositório de Músicas (Simulando o SQL)
+const minhasMusicas = [
+    { titulo: "Dancing In The Flames", artista: "The Weeknd", id: "6699VpY7pUTh9U0O4v6KPT" },
+    { titulo: "Don't Shut Me Down", artista: "ABBA", id: "0p69fBY9H7Y4SZY0pAbR9r" },
+    { titulo: "Glad You Came", artista: "The Wanted", id: "1vYvYx7933X0W283C49V0r" }
+];
+
+function renderizarMusicas() {
+    const container = document.getElementById('grid-musicas');
+    if(!container) return;
+
+    container.innerHTML = minhasMusicas.map(m => `
         <div class="projeto-card">
             <div class="glow-bar"></div>
-            <h3>Minha Vibe</h3>
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EIX995v0797id?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <p><strong>${m.titulo}</strong></p>
+            <iframe style="border-radius:12px" 
+                src="https://open.spotify.com/embed/track/${m.id}?utm_source=generator&theme=0" 
+                width="100%" height="80" frameBorder="0" allow="encrypted-media">
+            </iframe>
         </div>
+    `).join('');
+}
 
-        <div class="projeto-card" id="discord-card">
-            <div class="glow-bar"></div>
-            <h3>Status Real-time</h3>
-            <div id="lanyard-status">
-                <p>Carregando atividade...</p>
-            </div>
-            <a href="https://discord.com/users/TEU_ID_DO_DISCORD" target="_blank" class="btn">Me add no Discord</a>
-        </div>
+// API Lanyard (Discord Status)
+async function carregarStatusDiscord() {
+    const userID = "715243302250119259";
+    try {
+        const response = await fetch(`https://api.lanyard.rest/v1/users/${userID}`);
+        const data = await response.json();
+        const status = data.data;
+        const container = document.getElementById('lanyard-status');
+        
+        if (status.listening_to_spotify) {
+            container.innerHTML = `<p>🟢 Ouvindo: <strong>${status.spotify.song}</strong></p>`;
+        } else if (status.activities.length > 0) {
+            container.innerHTML = `<p>🎮 Atividade: <strong>${status.activities[0].name}</strong></p>`;
+        } else {
+            container.innerHTML = `<p>⚪ Status: ${status.discord_status}</p>`;
+        }
+    } catch (err) {
+        console.log("Erro Lanyard");
+    }
+}
 
-    </div>
-</section>
-
-        <div id="grid-musicas" class="musicas-grid">
-            </div>
-    </div>
-</section>
-    
-  </div>
-</section>
-
-    <section id="certificados">
-      <h2><i class="fas fa-certificate"></i> Conquistas & Certificados</h2>
-      <div class="certificados-grid">
-        <div class="card"><strong>HTML e CSS</strong><span>Alura</span></div>
-        <div class="card"><strong>Lógica</strong><span>Alura</span></div>
-        <div class="card"><strong>Front-End</strong><span>Alura</span></div>
-        <div class="card"><strong>Back-End</strong><span>Alura + Google</span></div>
-        <div class="card"><strong>IA</strong><span>Alura + Google</span></div>
-      </div>
-    </section>
-    
-    <section id="contato">
-      <div class="contato-box">
-        <h2><i class="fas fa-envelope-open-text"></i> Vamos conversar?</h2>
-        <div class="contato-links">
-          <a href="mailto:c.dfoxgg@gmail.com" class="btn-neon"><i class="fas fa-envelope"></i> Email</a>
-          <a href="https://github.com/carolinamatosdacosta" target="_blank" class="btn-neon"><i class="fab fa-github"></i> GitHub</a>
-          <a href="https://wa.me/5511915140791" target="_blank" class="btn-neon whatsapp">
-            <i class="fab fa-whatsapp"></i> WhatsApp
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Carolina Matos da Costa • Made with 💜 & Code</p>
-  </footer>
-
-  <a href="https://wa.me/5511915140791" class="whatsapp-float" target="_blank" aria-label="Contato pelo WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <script src="script.js"></script>
-</body>
-</html>
+// Inicialização
+window.addEventListener('load', () => {
+    typeEffect();
+    renderizarMusicas();
+    carregarStatusDiscord();
+    // Atualiza o status do discord a cada 30 segundos
+    setInterval(carregarStatusDiscord, 30000);
+});
