@@ -22,7 +22,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Header & Nav */
 header { height: 100vh; display: flex; flex-direction: column; }
 
 nav {
@@ -48,7 +47,6 @@ nav {
 }
 .links a:hover { color: var(--primary); text-shadow: 0 0 8px var(--primary); }
 
-/* Hero Section */
 .hero {
   flex: 1;
   display: flex;
@@ -91,7 +89,6 @@ nav {
   50% { opacity: 0.8; }
 }
 
-/* Sections */
 section { padding: 100px 10%; }
 h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; color: var(--primary); }
 
@@ -135,7 +132,6 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; color: var(--pr
   box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
 }
 
-/* Certificados */
 .certificados-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -149,7 +145,6 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; color: var(--pr
   border-left: 4px solid var(--neon);
 }
 
-/* Contato */
 .contato-box {
   background: linear-gradient(rgba(108, 92, 231, 0.1), transparent);
   padding: 60px;
@@ -215,3 +210,19 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; color: var(--pr
 .whatsapp-float:hover { transform: scale(1.1); }
 
 footer { text-align: center; padding: 50px; opacity: 0.6; }
+
+.input-estilizado {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(162, 155, 254, 0.3);
+  padding: 10px;
+  border-radius: 8px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+#lista-musicas li {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+}
