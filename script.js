@@ -28,7 +28,7 @@ function typeEffect() {
             if (!isDeleting) {
                 i = (i + 1) % typingText.length;
             }
-            setTimeout(typeEffect, 1200); // Pausa quando termina de escrever
+            setTimeout(typeEffect, 1200); 
         }
     }
 }
@@ -42,17 +42,27 @@ function toggleSpotify() {
     widget.classList.toggle('spotify-opened');
     
     if (widget.classList.contains('spotify-opened')) {
-        // Quando abre: vira um X e mostra o texto
+        // Ícone de fechar (X)
         icon.className = 'fas fa-times'; 
-        if(span) span.style.display = 'block';
+        if(span) span.style.display = 'inline';
     } else {
-        // Quando fecha: volta o ícone do Spotify
+        // Ícone do Spotify
         icon.className = 'fab fa-spotify';
         if(span) span.style.display = 'none';
     }
 }
 
-// Inicia as funções quando a página carrega
+// Fechar o Spotify se o usuário clicar em qualquer outro lugar da página
+document.addEventListener('click', (event) => {
+    const widget = document.getElementById('spotify-widget');
+    if (widget && widget.classList.contains('spotify-opened')) {
+        if (!widget.contains(event.target)) {
+            toggleSpotify();
+        }
+    }
+});
+
+// Inicialização
 document.addEventListener("DOMContentLoaded", () => {
     typeEffect();
 });

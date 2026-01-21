@@ -93,34 +93,13 @@ nav {
 section { padding: 100px 10%; }
 h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; color: var(--primary); }
 
-/* Deixa todos os cards do grid com a mesma altura */
+/* --- GRID DE PROJETOS ORGANIZADO --- */
 .projetos-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    align-items: start; /* Impede que um card estique o outro */
-}
-
-.projeto-card.tiktok-card {
-    max-height: 450px; /* Limita a altura do card */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden; /* Corta o excesso do widget se necessário */
-}
-
-.tiktok-card blockquote {
-    transform: scale(0.8); /* Diminui o tamanho em 20% */
-    transform-origin: top center;
-    margin: -20px 0 !important; /* Remove espaços inúteis */
-    background: transparent !important;
-}
-
-/* Deixa os botões menores também se quiser */
-.projeto-card .btn {
-    padding: 8px 20px;
-    font-size: 0.85rem;
-}
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+    gap: 30px;
+    justify-content: center; /* Centraliza os 2 cards */
+    margin-bottom: 50px;
 }
 
 .projeto-card {
@@ -131,6 +110,9 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; color: var(--pr
   overflow: hidden;
   transition: 0.4s;
   border: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .glow-bar {
@@ -154,9 +136,93 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; color: var(--pr
   border-radius: 30px;
   text-decoration: none;
   font-weight: 600;
+  text-align: center;
   box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
 }
 
+/* --- GRID DO JOGO (DESTAQUE) --- */
+.jogo-destaque {
+  text-align: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.game-frame {
+  margin: 20px auto;
+  width: 100%;
+  height: 500px;
+  border-radius: 15px;
+  border: 3px solid var(--neon);
+  box-shadow: 0 0 25px rgba(108, 92, 231, 0.4);
+  overflow: hidden;
+  background: #000;
+}
+
+.game-frame iframe { width: 100%; height: 100%; border: none; }
+
+/* --- BOTÕES FLUTUANTES --- */
+.whatsapp-float, .tiktok-float {
+  position: fixed;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  color: #FFF;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  z-index: 1001;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.whatsapp-float { bottom: 20px; background-color: #25d366; }
+.tiktok-float { bottom: 160px; background-color: #000; box-shadow: 0 0 15px rgba(255,0,80,0.3); }
+
+/* --- SPOTIFY WIDGET (REDUZIDO) --- */
+#spotify-widget {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: var(--spotify-green);
+  border-radius: 50px;
+  z-index: 1000;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+}
+
+#spotify-widget.spotify-opened {
+  width: 320px;
+  height: 220px; /* Reduzi a altura para o player compacto */
+  border-radius: 20px;
+  background: rgba(18, 18, 18, 0.98);
+  bottom: 20px;
+  border: 1px solid var(--spotify-green);
+}
+
+#toggle-spotify {
+  min-height: 60px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+#spotify-content { padding: 10px; opacity: 0; transition: 0.3s; }
+.spotify-opened #spotify-content { opacity: 1; }
+
+/* --- CERTIFICADOS E AFINS --- */
 .certificados-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -178,13 +244,6 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; color: var(--pr
   border: 1px solid rgba(108, 92, 231, 0.2);
 }
 
-.contato-links {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
 .btn-neon {
   display: inline-block;
   padding: 12px 30px;
@@ -197,142 +256,11 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; color: var(--pr
   transition: 0.3s;
 }
 
-.btn-neon:hover {
-  background: var(--primary);
-  color: #000;
-  box-shadow: 0 0 20px var(--primary);
-}
-
-/* --- BOTÕES FLUTUANTES (ARREDONDADOS) --- */
-
-.whatsapp-float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25d366;
-  color: #FFF;
-  border-radius: 50px;
-  text-align: center;
-  font-size: 30px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-  z-index: 1001;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.tiktok-float {
-  position: fixed;
-  bottom: 160px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  background-color: #000;
-  color: #fff;
-  border-radius: 50px;
-  text-align: center;
-  font-size: 25px;
-  box-shadow: 0 4px 15px rgba(255, 0, 80, 0.3);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-#spotify-widget {
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  background: var(--spotify-green);
-  border-radius: 50px;
-  z-index: 1000;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-}
-
-#spotify-widget.spotify-opened {
-  width: 320px;
-  height: 480px;
-  border-radius: 20px;
-  background: rgba(18, 18, 18, 0.98);
-  backdrop-filter: blur(15px);
-  bottom: 20px;
-}
-
-#toggle-spotify {
-  min-height: 60px;
-  width: 100%;
-  background: transparent;
-  border: none;
-  color: white;
-  cursor: pointer;
-  font-size: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-.spotify-opened #toggle-spotify {
-  justify-content: space-between;
-  padding: 0 20px;
-  font-size: 20px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-#toggle-spotify span { display: none; font-size: 0.9rem; }
-.spotify-opened #toggle-spotify span { display: block; }
-
-#spotify-content {
-  padding: 10px;
-  opacity: 0;
-  transition: 0.3s;
-  pointer-events: none;
-}
-
-.spotify-opened #spotify-content {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* --- GRID DO JOGO --- */
-.jogo-destaque {
-  grid-column: 1 / -1;
-  text-align: center;
-}
-
-.game-frame {
-  margin: 20px auto;
-  width: 100%;
-  max-width: 800px;
-  height: 500px;
-  border-radius: 15px;
-  border: 3px solid var(--neon);
-  box-shadow: 0 0 25px rgba(108, 92, 231, 0.4);
-  overflow: hidden;
-  background: #000;
-}
-
-.game-frame iframe { width: 100%; height: 100%; border: none; }
-
-.tiktok-card blockquote {
-  background: transparent !important;
-  margin: 0 auto;
-}
+.btn-neon:hover { background: var(--primary); color: #000; box-shadow: 0 0 20px var(--primary); }
 
 footer { text-align: center; padding: 50px; opacity: 0.6; }
 
 @media (max-width: 768px) {
   .game-frame { height: 300px; }
   #typing { font-size: 2rem; }
-  nav { padding: 1rem 5%; }
 }
