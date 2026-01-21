@@ -33,38 +33,32 @@ function typeEffect() {
 
 typeEffect();
 
-const API_URL = 'http://localhost:3000/musicas';
-
-async function carregarMusicas() {
+async function carregarRepositorio() {
     try {
-        const res = await fetch(API_URL);
-        const musicas = await res.json();
-        const lista = document.getElementById('lista-musicas');
-        lista.innerHTML = musicas.map(m => `
-            <li>
-                <span><strong>${m.titulo}</strong> - ${m.artista}</span>
-            </li>
-        `).join('');
-    } catch (err) {
-        console.error("Erro ao carregar músicas. O servidor está ligado?");
+        const response = await fetch('http://localhost:3000/musicas');
+        const musicas = await response.json();
+        
+        const container = document.getElementById('grid-musicas');
+        container.innerHTML = ''; // Limpa a lista antes de carregar
+
+        musicas.forEach(m => {
+            container.innerHTML += `
+                <div class="projeto-card">
+                    <div class="glow-bar"></div>
+                    <h3>${m.titulo}</h3>
+                    <p><i class="fas fa-user"></i> ${m.artista}</p>
+                    
+                    ${m.spotify_url ? `
+                        <iframe src="${m.spotify_url}" width="100%" height="80" 
+                        frameBorder="0" allow="encrypted-media" style="border-radius:12px;"></iframe>
+                    ` : '<p style="font-size:0.8rem; opacity:0.5;">Player não disponível</p>'}
+                </div>
+            `;
+        });
+    } catch (error) {
+        console.error("Erro ao carregar o banco de dados:", error);
     }
 }
 
-async function salvarMusica() {
-    const titulo = document.getElementById('titulo').value;
-    const artista = document.getElementById('artista').value;
+window.onload = carregarRepositorio;
 
-    if (!titulo || !artista) return alert("Preencha tudo!");
-
-    await fetch(API_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ titulo, artista })
-    });
-
-    document.getElementById('titulo').value = '';
-    document.getElementById('artista').value = '';
-    carregarMusicas();
-}
-
-carregarMusicas();
